@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#233b34">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>CSSBuy spreadsheet : catégories, tailles et repères d’achat</title>
+  <meta name="description" content="Explorez les catégories avec notre guide CSSBuy spreadsheet en français : tailles, photos QC, liens produits et budget complet avant de commander.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="CSSBuy spreadsheet — Le carnet des achats réfléchis">
+  <meta property="og:description" content="Des catégories accessibles et des conseils concrets pour comparer les articles, vérifier les tailles et préparer son budget.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CSSBuy spreadsheet — Guide pratique en français">
+  <meta name="twitter:description" content="Trouver une catégorie, comprendre les photos et vérifier les détails avant l’achat.">
+  <!--
+    Fichier : index.html.
+    Mot-clé principal : CSSBuy spreadsheet.
+    Axes secondaires : CSSBuy finds ; guide CSSBuy en français ;
+    photos QC CSSBuy ; liens produits CSSBuy.
+
+    Recherche préparatoire effectuée le 7 novembre 2026.
+    La page de résultats Google n’a pas pu être consultée directement :
+    les dix sites ci-dessous proviennent des résultats du moteur de recherche
+    disponible. Ils ne constituent pas un classement Google vérifié.
+
+    Synthèse thématique originale de dix résultats consultés :
+    1. cssbuyhome.com — liens produits, catégories, tailles, QC et livraison.
+    2. cssbuyluxe.com — sélection par catégories et présentation des prix.
+    3. cssbuysspreadsheet.com — listes de trouvailles, liens sources et comparaison.
+    4. cssbuymall.com — découverte de produits et navigation par vêtements.
+    5. cssbuyfind.com — catalogue visuel, plateformes sources et inspection.
+    6. cssbuylinks.com — préparation des liens et conservation des variantes.
+    7. cssbuy.delivery — guide débutant, catégories et parcours de commande.
+    8. rep.tools/guides/cssbuy-spreadsheet — réutilisation des liens sources.
+    9. linktr.ee/cssbuysheet — accès à des ressources et listes de produits.
+    10. cssbuy.fit — navigation par catégories, vêtements et accessoires.
+
+    Les quantités, tarifs, promotions, évaluations et promesses commerciales
+    de ces sites ne sont pas repris. Les textes de cette page sont originaux.
+    Aucun domaine de publication n’ayant été fourni, aucune URL canonique
+    ni URL de page fictive n’est déclarée.
+  -->
+  <style>
+    :root {
+      --paper:#f5f2e9;
+      --white:#fffefa;
+      --ink:#233b34;
+      --muted:#58665d;
+      --line:#d4d9cc;
+      --accent:#e4f18b;
+      --soft:#e9ecdf;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans)}
+    a{color:inherit;text-underline-offset:4px}
+    a:hover{text-decoration-thickness:2px}
+    a:focus-visible,summary:focus-visible{outline:3px solid #526b20;outline-offset:5px}
+    img{display:block;max-width:100%;height:auto}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.12;text-wrap:balance}
+    h1,h2{font-family:var(--serif);font-weight:400}
+    h1{font-size:clamp(2.8rem,6.4vw,5.7rem);letter-spacing:-.055em}
+    h2{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.04em}
+    h3{font-size:1.12rem;line-height:1.35}
+    p+p{margin-top:1rem}
+    .wrap{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+    .masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}
+    .logo{font-weight:850;font-size:1.35rem;letter-spacing:-.065em;text-decoration:none;white-space:nowrap}
+    .masthead-note{font-size:.78rem;text-transform:uppercase;letter-spacing:.13em}
+    .top-link{font-size:.88rem}
+    .directory{background:var(--ink);color:var(--white);padding:24px 0 27px}
+    .directory-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:17px}
+    .eyebrow{font-size:.72rem;font-weight:750;text-transform:uppercase;letter-spacing:.15em}
+    .directory-head p{font-size:.8rem;color:#d7dfd3}
+    .categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+    .categories a{display:flex;flex-direction:column;justify-content:center;min-height:72px;padding:10px 13px;border:1px solid #718176;border-radius:3px;text-decoration:none;font-size:.85rem;line-height:1.35}
+    .categories a:hover{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+    .categories small{font-size:.7rem;opacity:.8;margin-top:3px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;border-bottom:1px solid var(--line)}
+    .hero-copy{padding:64px 45px 54px 0}
+    .hero-copy .eyebrow{margin-bottom:23px}
+    .hero-copy h1 span{display:block;font-family:var(--sans);font-size:.37em;font-weight:650;letter-spacing:-.035em;margin-bottom:18px}
+    .lead{font-size:1.08rem;color:var(--muted);max-width:57ch;margin-top:26px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:30px;background:var(--ink);color:var(--white);padding:13px 20px;text-decoration:none;font-size:.9rem;font-weight:650;border:1px solid var(--ink)}
+    .button:hover{background:#38554a}
+    .hero-copy .button{margin-top:28px}
+    .fine{font-size:.8rem;color:var(--muted)}
+    .hero-copy .fine{margin-top:16px;max-width:58ch}
+    .hero-visual{background:var(--soft);display:flex;flex-direction:column;justify-content:center;padding:26px}
+    .hero-visual img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff}
+    .hero-visual figcaption{display:flex;justify-content:space-between;gap:15px;font-size:.75rem;margin-top:15px}
+    .answer{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:32px 0;border-bottom:1px solid var(--line)}
+    .answer p{max-width:85ch}
+    .answer strong{font-weight:750}
+    .section{padding:64px 0}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:32px}
+    .section-head .eyebrow{margin-bottom:13px}
+    .section-head>p{max-width:58ch;color:var(--muted)}
+    .inspiration{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+    .inspiration figure{min-width:0}
+    .inspiration .image{display:block;background:#eeede7;overflow:hidden}
+    .inspiration img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .inspiration .contain{object-fit:contain;background:#f4f4f4}
+    .inspiration figcaption{padding-top:16px}
+    .inspiration h3{font-family:var(--serif);font-size:1.5rem;font-weight:400}
+    .inspiration p{font-size:.85rem;color:var(--muted);margin-top:8px}
+    .image-note{margin-top:22px;max-width:95ch}
+    .method{background:var(--soft)}
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:34px}
+    .step{border-top:1px solid #aab5a1;padding-top:18px}
+    .number{display:block;font-family:var(--serif);font-size:2rem;margin-bottom:17px}
+    .step p{font-size:.9rem;color:var(--muted);margin-top:12px}
+    .journal{display:grid;grid-template-columns:250px 1fr;gap:55px}
+    .journal-intro .eyebrow{margin-bottom:15px}
+    .journal-intro p{margin-top:20px;color:var(--muted)}
+    .articles article{padding:0 0 29px;margin-bottom:29px;border-bottom:1px solid var(--line)}
+    .articles article:last-child{margin-bottom:0}
+    .articles h3{font-family:var(--serif);font-weight:400;font-size:1.8rem;margin:10px 0 16px}
+    .articles h4{font-size:.95rem;margin:20px 0 7px}
+    .articles p,.articles li{color:var(--muted);font-size:.94rem}
+    .articles ul{padding-left:20px;margin:10px 0}
+    .article-link{display:inline-block;margin-top:16px;font-size:.86rem;font-weight:650}
+    .table-scroll{overflow-x:auto;margin-top:25px}
+    table{width:100%;border-collapse:collapse;font-size:.88rem;background:var(--white)}
+    th,td{padding:16px;text-align:left;vertical-align:top;border:1px solid var(--line)}
+    th{font-weight:700;background:var(--soft)}
+    caption{text-align:left;font-size:.9rem;font-weight:650;margin-bottom:12px}
+    .faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px}
+    .faq-grid .eyebrow{margin-bottom:15px}
+    .faq-grid>div>p{margin-top:20px;color:var(--muted)}
+    details{border-top:1px solid var(--line);padding:20px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:650;padding-right:15px}
+    details p{padding-top:13px;color:var(--muted);font-size:.94rem}
+    .closing{background:var(--accent);padding:37px;display:flex;justify-content:space-between;align-items:center;gap:30px;margin-bottom:50px}
+    .closing h2{font-size:2.3rem}
+    .closing p{margin-top:10px;max-width:65ch}
+    .closing .button{flex-shrink:0}
+    footer{border-top:1px solid var(--line);padding:28px 0 35px}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}
+    footer p{max-width:105ch}
+    @media(min-width:1000px){
+      .deferred{content-visibility:auto;contain-intrinsic-size:auto 700px}
+    }
+    @media(max-width:900px){
+      .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .hero-copy{padding:42px 25px 40px 0}
+      .hero-visual{padding:15px}
+      .inspiration{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 17px}
+      .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .journal{grid-template-columns:1fr;gap:30px}
+      .journal-intro p{max-width:70ch}
+      .faq-grid{grid-template-columns:1fr;gap:25px}
+      .closing{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:600px){
+      .wrap{width:calc(100% - 32px)}
+      .masthead{padding:17px 0}
+      .masthead-note{display:none}
+      .top-link{font-size:.78rem}
+      .directory{padding:19px 0}
+      .directory-head{display:block}
+      .directory-head p{margin-top:5px}
+      .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+      .categories a{min-height:61px;padding:9px 10px;font-size:.8rem}
+      .hero{grid-template-columns:1fr}
+      .hero-copy{padding:35px 0}
+      .hero-visual{padding:18px;margin-bottom:25px}
+      .hero-visual img{max-height:340px}
+      .answer{grid-template-columns:1fr;gap:10px;padding:25px 0}
+      .section{padding:43px 0}
+      .section-head{grid-template-columns:1fr;gap:20px}
+      .steps{gap:27px 20px}
+      .step h3{font-size:1rem}
+      .inspiration h3{font-size:1.3rem}
+      .inspiration p{font-size:.8rem}
+      .closing{padding:26px;margin-bottom:35px}
+      .closing h2{font-size:2rem}
+      .footer-top{align-items:flex-start;flex-direction:column}
+      th,td{padding:12px;min-width:135px}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"#page",
+        "name":"CSSBuy spreadsheet : catégories, tailles et repères d’achat",
+        "description":"Un guide indépendant en français pour explorer les catégories, comparer les tailles, comprendre les photos QC et préparer un budget.",
+        "inLanguage":"fr",
+        "about":{"@type":"Thing","name":"CSSBuy spreadsheet"},
+        "hasPart":[
+          {"@id":"#article-tailles"},
+          {"@id":"#article-qc"},
+          {"@id":"#article-budget"},
+          {"@id":"#questions"}
+        ]
+      },
+      {
+        "@type":"Article",
+        "@id":"#article-tailles",
+        "headline":"Choisir une taille à partir de mesures",
+        "description":"Comparer les mesures à plat d’un vêtement et la longueur utile d’une chaussure avant de sélectionner une variante.",
+        "inLanguage":"fr",
+        "isPartOf":{"@id":"#page"},
+        "articleSection":"Guide des tailles"
+      },
+      {
+        "@type":"Article",
+        "@id":"#article-qc",
+        "headline":"Lire les photos QC sans leur faire dire davantage",
+        "description":"Distinguer une image de présentation d’une photo de contrôle liée à une commande et demander les détails manquants.",
+        "inLanguage":"fr",
+        "isPartOf":{"@id":"#page"},
+        "articleSection":"Photos et contrôle visuel"
+      },
+      {
+        "@type":"Article",
+        "@id":"#article-budget",
+        "headline":"Construire un budget qui dépasse le prix affiché",
+        "description":"Séparer le prix de l’article, la livraison locale, les services, le transport international et les éventuels frais à destination.",
+        "inLanguage":"fr",
+        "isPartOf":{"@id":"#page"},
+        "articleSection":"Budget et livraison"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"#questions",
+        "inLanguage":"fr",
+        "isPartOf":{"@id":"#page"},
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Qu’est-ce qu’un CSSBuy spreadsheet ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Un CSSBuy spreadsheet est une liste de repérage qui rassemble des liens produits et des informations de comparaison. Il sert à préparer une recherche ; il ne garantit ni le stock, ni la qualité, ni l’authenticité des articles."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Cette page est-elle un site officiel CSSBuy ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Non. Ce guide est indépendant de CSSBuy et des marques citées. Les boutons de découverte ouvrent CAFANS ; ils ne donnent pas accès à un compte ou à un paiement CSSBuy."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Comment utiliser les liens produits CSSBuy ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Conservez l’adresse de la fiche source, puis vérifiez le modèle, la couleur et la taille. Si vous utilisez un agent d’achat, vérifiez la compatibilité du lien et les conditions du service dans votre propre compte avant toute commande."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Une photo QC prouve-t-elle l’authenticité ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Non. Une photo QC peut aider à examiner l’apparence de l’article reçu, sa variante ou un défaut visible. Elle ne constitue pas, à elle seule, une authentification ni une garantie de durabilité."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Le prix d’un article comprend-il toute la livraison ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ne le présumez pas. Vérifiez séparément la livraison locale, les services, le transport international et les éventuels frais à destination. Seul le récapitulatif applicable à votre commande précise les montants retenus."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Comment choisir entre deux tailles ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Comparez les mesures de la fiche avec un vêtement ou une paire qui vous va déjà. Demandez une mesure complémentaire si nécessaire et vérifiez les possibilités de retour avant de décider."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/hdjnv/">
+</head>
+<body>
+  <header class="wrap masthead">
+    <a class="logo" href="https://www.cafans.com" aria-label="Découvrir www.cafans.com">www.cafans.com</a>
+    <span class="masthead-note">Le carnet des achats réfléchis</span>
+    <a class="top-link" href="https://www.cafans.com">Ouvrir le catalogue ↗</a>
+  </header>
+
+  <nav class="directory" aria-label="Catégories du catalogue CAFANS">
+    <div class="wrap">
+      <div class="directory-head">
+        <p class="eyebrow">01 / Choisir une catégorie</p>
+        <p>Accès direct aux rubriques CAFANS</p>
+      </div>
+      <div class="categories">
+        <a href="https://cafans.com/category-911-Shoes.html"><span lang="en">Shoes ↗</span><small>Chaussures</small></a>
+        <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html"><span lang="en">Hoodies/Sweaters ↗</span><small>Sweats et pulls</small></a>
+        <a href="https://cafans.com/category-913-T-Shirts.html"><span lang="en">T-Shirts ↗</span><small>Hauts du quotidien</small></a>
+        <a href="https://cafans.com/category-914-Jackets.html"><span lang="en">Jackets ↗</span><small>Vestes et couches extérieures</small></a>
+        <a href="https://cafans.com/category-915-Pants%2FShorts.html"><span lang="en">Pants/Shorts ↗</span><small>Pantalons et shorts</small></a>
+        <a href="https://cafans.com/category-916-Headwear.html"><span lang="en">Headwear ↗</span><small>Casquettes et couvre-chefs</small></a>
+        <a href="https://cafans.com/category-917-Sets.html"><span lang="en">Sets ↗</span><small>Ensembles coordonnés</small></a>
+        <a href="https://cafans.com/category-918-underwear%2Funderpants.html"><span lang="en">Underwear/underpants ↗</span><small>Sous-vêtements</small></a>
+        <a href="https://cafans.com/category-919-Jersey.html"><span lang="en">Jersey ↗</span><small>Maillots de sport</small></a>
+        <a href="https://cafans.com/category-920-Accessories.html"><span lang="en">Accessories ↗</span><small>Accessoires et détails</small></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="wrap hero" aria-labelledby="main-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Guide indépendant / En français</p>
+        <h1 id="main-title"><span>CSSBuy spreadsheet</span>Le bon détail.<br>Le bon choix.</h1>
+        <p class="lead">Une liste de trouvailles devient utile lorsqu’elle aide à comparer. Commencez par une catégorie, vérifiez les mesures et gardez une trace des informations qui comptent avant de commander.</p>
+        <a class="button" href="https://www.cafans.com">Explorer CAFANS <span aria-hidden="true">↗</span></a>
+        <p class="fine">Vous consultez un guide éditorial. Les liens de découverte mènent à CAFANS ; cette page ne propose ni paiement ni connexion CSSBuy.</p>
+      </div>
+      <figure class="hero-visual">
+        <img
+          src="https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwbeac049d/nk/ad5/8/9/0/7/e/ad58907e_b736_4f51_a865_b8e6a5460502.jpg?sh=720&amp;sm=fit&amp;sw=720"
+          width="720" height="720"
+          alt="Baskets Nike Air Max LTD 3 blanches et grises, avec Swoosh latéral et unité Air visible au talon."
+          fetchpriority="high" loading="eager" decoding="async">
+        <figcaption><span>Nike / Repère visuel</span><span>Chaussures · Volume · Finitions</span></figcaption>
+      </figure>
+    </section>
+
+    <aside class="wrap answer" aria-label="Définition rapide">
+      <span class="eyebrow">La réponse courte</span>
+      <p><strong>Un CSSBuy spreadsheet est une liste de repérage</strong> qui rassemble des liens produits et des informations de comparaison. Il sert à préparer une recherche ; il ne garantit ni le stock, ni la qualité, ni l’authenticité des articles.</p>
+    </aside>
+
+    <section class="wrap section" aria-labelledby="inspiration-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / Le cahier d’inspiration</p>
+          <h2 id="inspiration-title">Du volume.<br>De la matière. Du caractère.</h2>
+        </div>
+        <p>Une silhouette se construit aussi avec une casquette, un foulard ou un bracelet. Ces références visuelles illustrent des styles ; comparez toujours les caractéristiques de l’article réellement proposé.</p>
+      </div>
+
+      <div class="inspiration">
+        <figure>
+          <a class="image" href="https://www.cafans.com" aria-label="Explorer CAFANS après l’inspiration Louis Vuitton">
+            <img
+              src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-denim-cap--M5451M_PM1_Worn%20view.png?hei=640&amp;wid=512"
+              width="512" height="640"
+              alt="Mannequin portant une casquette Louis Vuitton en denim vert à motif Monogram et un foulard."
+              loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <h3>Louis Vuitton</h3>
+            <p>Pour choisir une casquette, vérifiez le tour de tête, la profondeur et le système de réglage.</p>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a class="image" href="https://www.cafans.com" aria-label="Explorer CAFANS après l’inspiration Gucci">
+            <img class="contain"
+              src="https://media.gucci.com/style/DarkGray_Center_0_0_980x980/1752254253/847343_3G001_5075_001_100_0000_Light-carre-en-twill-de-soie-imprime.jpg"
+              width="512" height="640"
+              alt="Carré Gucci violet à fleurs multicolores, bordure bleu clair et liseré orange."
+              loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <h3>Gucci</h3>
+            <p>Pour comparer un foulard imprimé, regardez les dimensions, les bords et les consignes d’entretien.</p>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a class="image" href="https://www.cafans.com" aria-label="Explorer CAFANS après l’inspiration Hermès">
+            <img
+              src="https://assets.hermes.com/is/image/hermesproduct/brides-et-gris-gris-twilly--062849S%2011-worn-1-0-0-1000-1000_g.jpg"
+              width="512" height="640"
+              alt="Mannequin en tee-shirt blanc et casquette rose portant un Twilly Hermès coloré noué au poignet."
+              loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <h3>Hermès</h3>
+            <p>Un ruban noué au poignet apporte une touche de couleur ; sa longueur détermine les possibilités de nouage.</p>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a class="image" href="https://www.cafans.com" aria-label="Explorer CAFANS après l’inspiration Dior">
+            <img class="contain"
+              src="https://assets.christiandior.com/is/image/diorprod/B1583DVORSD301_SBG_E01?hei=640&amp;wid=512"
+              width="512" height="640"
+              alt="Bracelet Dior à chaîne dorée, perles blanches et lettres D I O R."
+              loading="lazy" decoding="async">
+          </a>
+          <figcaption>
+            <h3>Dior</h3>
+            <p>Pour choisir un bracelet, comparez la longueur, le fermoir et la composition indiquée.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="fine image-note">Visuels de référence provenant des sites Nike, Louis Vuitton, Gucci, Hermès et Dior. Leur présence n’implique aucune affiliation, authentification des articles CAFANS ou disponibilité des modèles illustrés.</p>
+    </section>
+
+    <section class="method section deferred" aria-labelledby="method-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">03 / La méthode de repérage</p>
+            <h2 id="method-title">Quatre gestes avant l’achat.</h2>
+          </div>
+          <p>Pour organiser vos CSSBuy finds, une sélection courte et documentée facilite les décisions. Notez les points encore à confirmer au lieu de les remplacer par des suppositions.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Retrouver la fiche source</h3>
+            <p>Pour conserver vos liens produits CSSBuy, notez l’URL d’origine, la référence et la date de consultation. Distinguez une fiche article d’une page boutique sur Taobao, Weidian ou 1688.</p>
+          </div>
+          <div class="step">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Fixer la bonne variante</h3>
+            <p>Vérifiez la couleur sélectionnée, le modèle et le contenu du lot. Comparez les variantes d’un même article et conservez une capture des options si leur traduction est ambiguë.</p>
+          </div>
+          <div class="step">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>Examiner les détails utiles</h3>
+            <p>Une galerie de présentation sert au repérage. Les photos QC CSSBuy doivent correspondre à votre commande pour aider à vérifier la taille reçue, la couleur et les défauts visibles.</p>
+          </div>
+          <div class="step">
+            <span class="number" aria-hidden="true">04</span>
+            <h3>Préparer le coût complet</h3>
+            <p>Comparez le prix de l’article avec le budget livré. Gardez séparés les services, le transport et les éventuels frais à destination jusqu’à confirmation des montants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section journal deferred" aria-labelledby="journal-title">
+      <div class="journal-intro">
+        <p class="eyebrow">04 / Les articles du carnet</p>
+        <h2 id="journal-title">Moins d’hésitations.<br>Plus de repères.</h2>
+        <p>Ce guide CSSBuy en français répond aux questions pratiques qui reviennent au moment de choisir : la coupe, les images et le budget.</p>
+        <p class="fine">Les trois articles sont disponibles intégralement sur cette page.</p>
+      </div>
+
+      <div class="articles">
+        <article id="article-tailles" aria-labelledby="tailles-title">
+          <p class="eyebrow">Fiche pratique / Tailles et coupes</p>
+          <h3 id="tailles-title">Choisir une taille à partir de mesures</h3>
+          <p>Pour choisir la taille d’un hoodie, partez d’un vêtement qui vous va déjà. Mesurez-le à plat, puis comparez la largeur de poitrine, la longueur du dos et les manches. Une étiquette M ou L ne suffit pas à décrire une coupe.</p>
+
+          <h4>Comparer un tee-shirt, une veste et un pantalon</h4>
+          <p>Pour un tee-shirt, vérifiez les épaules et la longueur. Pour une veste, prévoyez l’espace nécessaire à la couche portée dessous. Pour un pantalon ou un short, comparez le tour de taille, la fourche et l’entrejambe ; un élastique modifie le maintien, mais pas toutes les proportions.</p>
+
+          <h4>Vérifier la pointure de baskets Nike</h4>
+          <p>Consultez le tableau correspondant au modèle et comparez les indications en centimètres lorsqu’elles sont disponibles. Une longueur de semelle intérieure ne correspond pas nécessairement à une longueur de pied recommandée : demandez ce qui a réellement été mesuré.</p>
+
+          <h4>Penser aux ensembles et aux maillots</h4>
+          <p>Pour un ensemble coordonné, vérifiez les mesures du haut et du bas séparément. Pour un maillot de sport, contrôlez la coupe et les dimensions plutôt que de déduire la taille de son apparence sur une photo.</p>
+          <a class="article-link" href="https://www.cafans.com">Comparer les informations du catalogue ↗</a>
+        </article>
+
+        <article id="article-qc" aria-labelledby="qc-title">
+          <p class="eyebrow">Fiche pratique / Lecture des images</p>
+          <h3 id="qc-title">Lire les photos QC sans leur faire dire davantage</h3>
+          <p>Une image de présentation montre un modèle. Une photo de contrôle doit montrer l’article reçu pour votre commande. Avant de comparer des photos QC, vérifiez leur correspondance avec la référence, la variante et la quantité attendues.</p>
+
+          <h4>Contrôler les coutures et les finitions visibles</h4>
+          <p>Pour des chaussures, observez les deux profils, les talons et les semelles. Pour un vêtement, examinez les coutures, les bords et les fermetures. Un cadrage trop éloigné peut masquer un défaut : demandez une photo rapprochée du point concerné.</p>
+
+          <h4>Demander une mesure plutôt qu’un avis vague</h4>
+          <p>Une question précise produit une information exploitable : longueur du bracelet, largeur du vêtement ou mesure d’une casquette. Si une couleur semble différente, l’éclairage et l’écran peuvent intervenir ; demandez une autre vue avant de conclure.</p>
+
+          <p>Le contrôle visuel ne prouve ni la composition exacte, ni le confort à long terme, ni l’authenticité. Pour un achat de marque, une provenance documentée reste distincte d’une simple ressemblance photographique.</p>
+          <a class="article-link" href="https://www.cafans.com">Examiner les fiches disponibles sur CAFANS ↗</a>
+        </article>
+
+        <article id="article-budget" aria-labelledby="budget-title">
+          <p class="eyebrow">Fiche pratique / Budget et livraison</p>
+          <h3 id="budget-title">Construire un budget qui dépasse le prix affiché</h3>
+          <p>Pour estimer le coût total d’une commande, séparez les postes. Un prix affiché peut correspondre à une seule variante et ne pas comprendre le transport. Conservez la devise d’origine et la date de votre comparaison.</p>
+
+          <h4>Comparer le poids réel et le volume</h4>
+          <p>Pour préparer un colis international, demandez les dimensions emballées et le poids retenu pour le devis. Selon le service choisi, le volume peut modifier le calcul. Retirer une boîte change aussi la protection : évaluez ce choix avec le prestataire.</p>
+
+          <h4>Anticiper les délais et les conditions de retour</h4>
+          <p>Le délai du vendeur, la réception à l’entrepôt et le transport international sont des étapes différentes. Vérifiez les conditions de retour avant l’expédition finale, ainsi que les restrictions applicables à l’article et à votre destination.</p>
+
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Tableau des postes budgétaires">
+            <table>
+              <caption>Les postes à confirmer avant de valider</caption>
+              <thead>
+                <tr><th scope="col">Poste</th><th scope="col">Information à vérifier</th><th scope="col">Où la relever</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Article</th><td>Variante, quantité et devise</td><td>Fiche et récapitulatif de commande</td></tr>
+                <tr><th scope="row">Livraison locale</th><td>Transport du vendeur au point de réception</td><td>Conditions applicables à l’achat</td></tr>
+                <tr><th scope="row">Services</th><td>Inspection, emballage ou autres options demandées</td><td>Détail des services sélectionnés</td></tr>
+                <tr><th scope="row">Transport international</th><td>Destination, poids facturable et dimensions</td><td>Devis du colis préparé</td></tr>
+                <tr><th scope="row">À destination</th><td>Éventuels frais, taxes et formalités</td><td>Conditions de la route et informations douanières</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="article-link" href="https://www.cafans.com">Reprendre sa sélection sur CAFANS ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section faq-grid deferred" id="questions" aria-labelledby="faq-title">
+      <div>
+        <p class="eyebrow">05 / Réponses directes</p>
+        <h2 id="faq-title">Les questions avant le clic.</h2>
+        <p>Des réponses courtes pour distinguer le repérage, la vérification et la commande.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>Qu’est-ce qu’un CSSBuy spreadsheet ?</summary>
+          <p>Un CSSBuy spreadsheet est une liste de repérage qui rassemble des liens produits et des informations de comparaison. Il sert à préparer une recherche ; il ne garantit ni le stock, ni la qualité, ni l’authenticité des articles.</p>
+        </details>
+        <details>
+          <summary>Cette page est-elle un site officiel CSSBuy ?</summary>
+          <p>Non. Ce guide est indépendant de CSSBuy et des marques citées. Les boutons de découverte ouvrent CAFANS ; ils ne donnent pas accès à un compte ou à un paiement CSSBuy.</p>
+        </details>
+        <details>
+          <summary>Comment utiliser les liens produits CSSBuy ?</summary>
+          <p>Conservez l’adresse de la fiche source, puis vérifiez le modèle, la couleur et la taille. Si vous utilisez un agent d’achat, vérifiez la compatibilité du lien et les conditions du service dans votre propre compte avant toute commande.</p>
+        </details>
+        <details>
+          <summary>Une photo QC prouve-t-elle l’authenticité ?</summary>
+          <p>Non. Une photo QC peut aider à examiner l’apparence de l’article reçu, sa variante ou un défaut visible. Elle ne constitue pas, à elle seule, une authentification ni une garantie de durabilité.</p>
+        </details>
+        <details>
+          <summary>Le prix d’un article comprend-il toute la livraison ?</summary>
+          <p>Ne le présumez pas. Vérifiez séparément la livraison locale, les services, le transport international et les éventuels frais à destination. Seul le récapitulatif applicable à votre commande précise les montants retenus.</p>
+        </details>
+        <details>
+          <summary>Comment choisir entre deux tailles ?</summary>
+          <p>Comparez les mesures de la fiche avec un vêtement ou une paire qui vous va déjà. Demandez une mesure complémentaire si nécessaire et vérifiez les possibilités de retour avant de décider.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap closing" aria-labelledby="closing-title">
+      <div>
+        <h2 id="closing-title">Votre prochaine sélection commence ici.</h2>
+        <p>Ouvrez le catalogue, comparez les variantes et gardez vos critères à portée de main.</p>
+      </div>
+      <a class="button" href="https://www.cafans.com">Découvrir CAFANS <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="logo" href="https://www.cafans.com">www.cafans.com</a>
+        <span class="fine">Carnet en français · CSSBuy spreadsheet</span>
+      </div>
+      <p class="fine">Guide indépendant de découverte et de comparaison. CSSBuy, Nike, Louis Vuitton, Gucci, Hermès et Dior sont des marques appartenant à leurs titulaires respectifs. Aucun partenariat officiel n’est revendiqué. Les visuels sont des références éditoriales ; vérifiez chaque fiche, sa provenance et ses conditions avant tout achat.</p>
+    </div>
+  </footer>
+</body>
+</html>
